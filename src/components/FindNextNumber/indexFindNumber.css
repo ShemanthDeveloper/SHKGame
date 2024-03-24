@@ -1,0 +1,53 @@
+.Find-next-number-home-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    background-color: #b7cbeb;
+}
+.levels-button{
+    height: 50px;
+    width: 200px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background-color: blue;
+}
+.levels-button {
+    /* Styles for enabled buttons */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .unlock-icon-find-number{
+    display: flex;
+    color: green;
+    padding-left: 8px;
+  }
+  .lock-icon-find-number{
+    display: none;
+    color: red;
+    padding-left: 8px;
+  }
+  
+  .levels-button:disabled {
+    background-color:#5f8acf;
+    color: black;
+    cursor: not-allowed;
+  }
+  .levels-button:disabled .lock-icon-find-number {
+    display: flex;
+  }
+  .levels-button:disabled .unlock-icon-find-number {
+    display: none;
+  }
+  .levels-heading-findnextnum{
+    font-size: 28px;
+    font-family: Roboto;
+  }
