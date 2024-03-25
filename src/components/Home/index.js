@@ -41,10 +41,16 @@ const Home=(props)=>{
         
       }
 
+      const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+          handleCheckValue();
+        }
+      };
+
       useEffect(() => {
-        if (totalQuestions === 2) {
+        if (totalQuestions === 20) {
           setShowGamePage(false);
-          if(correctAns!==2){
+          if(correctAns!==20){
             setNxtButtonText(false)
           }else{
             setNxtButtonText(true)
@@ -53,7 +59,7 @@ const Home=(props)=>{
       }, [totalQuestions]);
 
       const onClickNextLevel=()=>{
-        if(correctAns===2){
+        if(correctAns===20){
             changePage()
         }else{
             setTotalQuestions(0);
@@ -90,7 +96,7 @@ const Home=(props)=>{
             <div className="main-container-next-number">
         <h1 className="h1">Upto {level} Numbers</h1>
         <div className="img-container">
-          <img className="find-next-number-img" src="https://res.cloudinary.com/dvxhniunx/image/upload/v1711271063/IMG_1463_1_nad01b.jpg" alt="img"/>
+          <img className="find-next-number-img" src="https://res.cloudinary.com/dvxhniunx/image/upload/v1711341549/IMG-20240325-WA0004_oynr6o.jpg" alt="img"/>
         </div>
         <h3 className="second-heading"> What number comes next?</h3>
         <div className="game-container">
@@ -99,7 +105,7 @@ const Home=(props)=>{
             <div className="box2"><FaArrowRightLong className="icon"/></div>
             
             <div className="box">
-                <input type="number" onClick={()=>setValue(null)}  value={ans}  className="number-input" onChange={(e)=>setAnwser(e.target.value)}/>
+                <input onKeyDown={handleKeyDown} type="number" onClick={()=>setValue(null)}  value={ans}  className="number-input" onChange={(e)=>setAnwser(e.target.value)}/>
             </div>
         </div>
         <div className="btn-container">
@@ -108,7 +114,7 @@ const Home=(props)=>{
         </div>
         {val !== null && (
   <h2 className={val?"find-nxt-num-result-crt":"find-nxt-num-result-rng"}>
-    {val ? "Nice Aarav You Are Right" : "Aarav You Are Wrong"}
+    {val ? "Nice Sudhiksha You Are Right" : "Sudhiksha You Are Wrong"}
   </h2>
 )}
         
